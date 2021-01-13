@@ -3,12 +3,33 @@
  */
 package tech.romashov;
 
-public class App {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.swing.JFrame;
+import java.awt.Frame;
+import java.awt.event.WindowEvent;
+
+public class App implements AutoCloseable {
+    private Frame mainFrame;
+
     public String getGreeting() {
         return "Hello world.";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        App app = new App();
+        app.start();
+    }
+
+    public void start() {
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        Logger logger = LoggerFactory.getLogger(App.class);
+        mainFrame = new MainForm(logger);
+    }
+
+    @Override
+    public void close() {
+        mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
     }
 }
