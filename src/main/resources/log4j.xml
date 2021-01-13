@@ -10,7 +10,7 @@
     </appender>
 
     <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="root.log"/>
+        <param name="File" value="logs/root.log"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
         </layout>
@@ -26,7 +26,7 @@
     </logger>
 
     <root>
-        <priority value="DEBUG"/>
+        <priority value="INFO"/>
         <appender-ref ref="ASYNC"/>
     </root>
 

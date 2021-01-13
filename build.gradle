@@ -28,6 +28,7 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.0-alpha1'
     implementation 'org.slf4j:slf4j-log4j12:2.0.0-alpha1'
     implementation 'log4j:log4j:1.2.17'
+    implementation 'com.codeborne:selenide:5.17.3'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
