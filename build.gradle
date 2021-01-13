@@ -14,6 +14,7 @@ plugins {
     id 'application'
 
     id 'edu.sc.seis.launch4j' version '2.4.9'
+    id "de.undercouch.download" version "1.2"
 }
 
 repositories {
@@ -37,6 +38,23 @@ application {
     mainClassName = 'tech.romashov.App'
 }
 
+import de.undercouch.gradle.tasks.download.Download
+
+task downloadJre(type: Download) {
+    src 'https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u275-b01/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip'
+    dest "$buildDir/downloaded/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip"
+}
+
+task unzipJre(type: Copy) {
+    dependsOn downloadJre
+    from {
+        zipTree("$buildDir/downloaded/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip")
+    }
+    into "$buildDir/launch4j"
+}
+
 createExe {
+    dependsOn cleanCreateExe, unzipJre
     mainClassName = 'tech.romashov.App'
+    bundledJrePath = "jdk8u275-b01-jre"
 }
