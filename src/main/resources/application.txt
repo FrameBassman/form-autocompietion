@@ -1,0 +1,57 @@
+url = http://pgu.ivanovoobl.ru/record/in/?school=73802
+surname = Иванов
+name = Иван
+middlename = Иванович
+snils = 123
+
+passport_series = 1212
+passport_numeral = 123123
+passport_issue_date = 01.01.2001
+passport_issuer = Отделение МВД
+passport_code = 123-123
+
+index = 123123
+city = Москва
+street = Красная
+house_number = 1
+building = 1
+apartment = 1
+
+by_phone =
+by_email = test@test.test
+
+child_snils = 123
+child_surname = Петров
+child_name = Петр
+child_middlename = Петрович
+sex = female
+date_of_birth = 01.01.2010
+
+child_passport_series = 1212
+child_passport_number = 123123
+child_passport_issue_date = 01.01.2001
+child_passport_issuer = ЗАГС
+child_passport_record_number = 123
+
+child_index = 123123
+child_city = Москва
+child_street = Красная
+child_house_number = 1
+child_building = 1
+child_apartment = 1
+
+father_surname = Отец
+father_name = Ребенка
+father_middlename = Он
+father_date_of_birth = 01.01.2001
+father_email =
+father_phone = +79999999999
+
+mother_surname = Мать
+mother_name = Ребенка
+mother_middlename = Она
+mother_date_of_birth = 01.01.2001
+mother_email = test@test.test
+mother_phone =
+
+is_brother_or_sister_study = true
