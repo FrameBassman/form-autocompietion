@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.SelenideDriver;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
-import tech.romashov.bl.Form;
+import tech.romashov.bl.SummaryForm;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,10 +12,10 @@ import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainForm extends JFrame {
+public class MainWindow extends JFrame {
     private static final long serialVersionUID = 1L;
 
-    public MainForm(Logger logger)
+    public MainWindow(Logger logger)
     {
         super("TestContentPane");
 
@@ -45,7 +45,7 @@ public class MainForm extends JFrame {
         fillFormButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Form form = new Form(logger, selenide, properties);
+                SummaryForm form = new SummaryForm(logger, selenide, properties);
                 form.fill();
             }
         });

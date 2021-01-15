@@ -5,7 +5,7 @@ package tech.romashov;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tech.romashov.ui.MainForm;
+import tech.romashov.ui.MainWindow;
 
 import javax.swing.JFrame;
 import java.awt.Frame;
@@ -26,7 +26,7 @@ public class App implements AutoCloseable {
     public void start() {
         JFrame.setDefaultLookAndFeelDecorated(true);
         Logger logger = LoggerFactory.getLogger(App.class);
-        mainFrame = new MainForm(logger);
+        mainFrame = new MainWindow(logger);
     }
 
     @Override
