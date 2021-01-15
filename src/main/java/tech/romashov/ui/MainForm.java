@@ -1,8 +1,10 @@
-package tech.romashov;
+package tech.romashov.ui;
 
 import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.SelenideDriver;
 import org.slf4j.Logger;
+import tech.romashov.ApplicationProperties;
+import tech.romashov.bl.Form;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,7 +35,7 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 logger.info("Start browser opening");
-                selenide.open("http://pgu.ivanovoobl.ru/record/in/?school=73802");
+                selenide.open(properties.getProperty("url"));
                 selenide.switchTo().frame("main");
                 logger.info("Finish browser opening");
             }
@@ -43,34 +45,8 @@ public class MainForm extends JFrame {
         fillFormButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                logger.info("Start form filling");
-                selenide.$("#a_surname").clear();
-                selenide.$("#a_surname").setValue(properties.getProperty("surname"));
-
-                selenide.$("#a_name").clear();
-                selenide.$("#a_name").setValue(properties.getProperty("name"));
-
-                selenide.$("#a_middlename").clear();
-                selenide.$("#a_middlename").setValue(properties.getProperty("middlename"));
-
-                selenide.$("#a_snils").clear();
-                selenide.$("#a_snils").setValue(properties.getProperty("snils"));
-
-                selenide.$("#a_p_series").clear();
-                selenide.$("#a_p_series").setValue(properties.getProperty("passport_series"));
-
-                selenide.$("#a_p_numeral").clear();
-                selenide.$("#a_p_numeral").setValue(properties.getProperty("passport_numeral"));
-
-                selenide.$("#a_p_issue_date").clear();
-                selenide.$("#a_p_issue_date").setValue(properties.getProperty("passport_issue_date"));
-
-                selenide.$("#a_p_issuer").clear();
-                selenide.$("#a_p_issuer").setValue(properties.getProperty("passport_issuer"));
-
-                selenide.$("#a_p_code").clear();
-                selenide.$("#a_p_code").setValue(properties.getProperty("passport_code"));
-                logger.info("Finish form filling");
+                Form form = new Form(logger, selenide, properties);
+                form.fill();
             }
         });
 

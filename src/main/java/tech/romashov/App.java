@@ -5,6 +5,7 @@ package tech.romashov;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tech.romashov.ui.MainForm;
 
 import javax.swing.JFrame;
 import java.awt.Frame;
