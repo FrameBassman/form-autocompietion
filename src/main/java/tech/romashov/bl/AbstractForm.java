@@ -14,4 +14,8 @@ public abstract class AbstractForm {
         this.selenide = selenide;
         this.properties = props;
     }
+
+    public void fill() {
+
+    }
 }
