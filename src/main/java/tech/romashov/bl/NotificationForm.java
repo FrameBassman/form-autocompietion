@@ -8,4 +8,9 @@ public class NotificationForm extends AbstractForm {
     public NotificationForm(Logger log, SelenideDriver selenide, ApplicationProperties props) {
         super(log, selenide, props);
     }
+
+    @Override
+    public void fill() {
+
+    }
 }

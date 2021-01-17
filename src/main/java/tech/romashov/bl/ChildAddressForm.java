@@ -8,4 +8,9 @@ public class ChildAddressForm extends AbstractForm {
     public ChildAddressForm(Logger log, SelenideDriver selenide, ApplicationProperties props) {
         super(log, selenide, props);
     }
+
+    @Override
+    public void fill() {
+
+    }
 }

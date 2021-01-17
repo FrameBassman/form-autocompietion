@@ -8,4 +8,9 @@ public class FatherForm extends AbstractForm {
     public FatherForm(Logger log, SelenideDriver selenide, ApplicationProperties props) {
         super(log, selenide, props);
     }
+
+    @Override
+    public void fill() {
+
+    }
 }

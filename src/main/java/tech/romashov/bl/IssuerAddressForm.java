@@ -8,4 +8,9 @@ public class IssuerAddressForm extends AbstractForm {
     public IssuerAddressForm(Logger log, SelenideDriver selenide, ApplicationProperties props) {
         super(log, selenide, props);
     }
+
+    @Override
+    public void fill() {
+
+    }
 }

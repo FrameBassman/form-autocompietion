@@ -15,7 +15,5 @@ public abstract class AbstractForm {
         this.properties = props;
     }
 
-    public void fill() {
-
-    }
+    public abstract void fill();
 }
