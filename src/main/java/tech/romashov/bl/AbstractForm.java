@@ -1,6 +1,7 @@
 package tech.romashov.bl;
 
 import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
@@ -16,4 +17,8 @@ public abstract class AbstractForm {
     }
 
     public abstract void fill();
+
+    public SelenideElement fieldSet() {
+        return null;
+    }
 }
