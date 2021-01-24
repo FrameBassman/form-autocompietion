@@ -12,7 +12,23 @@ public class IssuerAddressForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        wrappers.get(0).$("input").clear();
+        wrappers.get(0).$("input").setValue(properties.getProperty("index"));
 
+        wrappers.get(1).$("input").clear();
+        wrappers.get(1).$("input").setValue(properties.getProperty("city"));
+
+        wrappers.get(2).$("input").clear();
+        wrappers.get(2).$("input").setValue(properties.getProperty("street"));
+
+        wrappers.get(3).$("input").clear();
+        wrappers.get(3).$("input").setValue(properties.getProperty("house_number"));
+
+        wrappers.get(4).$("input").clear();
+        wrappers.get(4).$("input").setValue(properties.getProperty("building"));
+
+        wrappers.get(5).$("input").clear();
+        wrappers.get(5).$("input").setValue(properties.getProperty("apartment"));
     }
 
     @Override

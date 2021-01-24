@@ -12,7 +12,20 @@ public class ChildPassportForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        wrappers.get(0).$("input").clear();
+        wrappers.get(0).$("input").setValue(properties.getProperty("child_passport_series"));
 
+        wrappers.get(1).$("input").clear();
+        wrappers.get(1).$("input").setValue(properties.getProperty("child_passport_number"));
+
+        wrappers.get(2).$("input").clear();
+        wrappers.get(2).$("input").setValue(properties.getProperty("child_passport_issue_date"));
+
+        wrappers.get(3).$("input").clear();
+        wrappers.get(3).$("input").setValue(properties.getProperty("child_passport_issuer"));
+
+        wrappers.get(4).$("input").clear();
+        wrappers.get(4).$("input").setValue(properties.getProperty("child_passport_record_number"));
     }
 
     @Override

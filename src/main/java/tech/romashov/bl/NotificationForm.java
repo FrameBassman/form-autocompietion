@@ -12,7 +12,11 @@ public class NotificationForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        wrappers.get(0).$("input").clear();
+        wrappers.get(0).$("input").setValue(properties.getProperty("by_phone"));
 
+        wrappers.get(1).$("input").clear();
+        wrappers.get(1).$("input").setValue(properties.getProperty("by_email"));
     }
 
 

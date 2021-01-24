@@ -12,7 +12,23 @@ public class ChildAddressForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        wrappers.get(0).$("input").clear();
+        wrappers.get(0).$("input").setValue(properties.getProperty("child_index"));
 
+        wrappers.get(1).$("input").clear();
+        wrappers.get(1).$("input").setValue(properties.getProperty("child_city"));
+
+        wrappers.get(2).$("input").clear();
+        wrappers.get(2).$("input").setValue(properties.getProperty("child_street"));
+
+        wrappers.get(3).$("input").clear();
+        wrappers.get(3).$("input").setValue(properties.getProperty("child_house_number"));
+
+        wrappers.get(4).$("input").clear();
+        wrappers.get(4).$("input").setValue(properties.getProperty("child_building"));
+
+        wrappers.get(5).$("input").clear();
+        wrappers.get(5).$("input").setValue(properties.getProperty("child_apartment"));
     }
 
     @Override

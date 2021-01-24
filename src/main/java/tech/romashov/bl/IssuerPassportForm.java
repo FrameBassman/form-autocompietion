@@ -12,20 +12,20 @@ public class IssuerPassportForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        selenide.$("#a_p_series").clear();
-        selenide.$("#a_p_series").setValue(properties.getProperty("passport_series"));
+        wrappers.get(0).$("input").clear();
+        wrappers.get(0).$("input").setValue(properties.getProperty("passport_series"));
 
-        selenide.$("#a_p_numeral").clear();
-        selenide.$("#a_p_numeral").setValue(properties.getProperty("passport_numeral"));
+        wrappers.get(1).$("input").clear();
+        wrappers.get(1).$("input").setValue(properties.getProperty("passport_numeral"));
 
-        selenide.$("#a_p_issue_date").clear();
-        selenide.$("#a_p_issue_date").setValue(properties.getProperty("passport_issue_date"));
+        wrappers.get(2).$("input").clear();
+        wrappers.get(2).$("input").setValue(properties.getProperty("passport_issue_date"));
 
-        selenide.$("#a_p_issuer").clear();
-        selenide.$("#a_p_issuer").setValue(properties.getProperty("passport_issuer"));
+        wrappers.get(3).$("input").clear();
+        wrappers.get(3).$("input").setValue(properties.getProperty("passport_issuer"));
 
-        selenide.$("#a_p_code").clear();
-        selenide.$("#a_p_code").setValue(properties.getProperty("passport_code"));
+        wrappers.get(4).$("input").clear();
+        wrappers.get(4).$("input").setValue(properties.getProperty("passport_code"));
     }
 
     @Override
