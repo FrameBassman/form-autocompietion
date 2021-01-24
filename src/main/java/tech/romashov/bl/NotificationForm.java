@@ -1,12 +1,13 @@
 package tech.romashov.bl;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
-public class NotificationForm extends AbstractForm {
-    public NotificationForm(Logger log, SelenideDriver selenide, ApplicationProperties props) {
-        super(log, selenide, props);
+public class NotificationForm extends AbstractForm implements IFillable {
+    public NotificationForm(Logger log, SelenideDriver selenide, ApplicationProperties props, ElementsCollection elements) {
+        super(log, selenide, props, elements);
     }
 
     @Override
