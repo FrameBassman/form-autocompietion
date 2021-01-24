@@ -13,4 +13,10 @@ public class NotificationForm extends AbstractForm {
     public void fill() {
 
     }
+
+
+    @Override
+    public String title() {
+        return " О принятом решении, связанном с постановкой на учет в общеобразовательное учреждение, прошу уведомлять меня";
+    }
 }

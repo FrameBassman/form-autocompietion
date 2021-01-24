@@ -13,4 +13,9 @@ public class ChildPassportForm extends AbstractForm {
     public void fill() {
 
     }
+
+    @Override
+    public String title() {
+        return " Свидетельство о рождении ребёнка";
+    }
 }

@@ -26,4 +26,9 @@ public class IssuerPassportForm extends AbstractForm {
         selenide.$("#a_p_code").clear();
         selenide.$("#a_p_code").setValue(properties.getProperty("passport_code"));
     }
+
+    @Override
+    public String title() {
+        return " Паспортные данные заявителя";
+    }
 }

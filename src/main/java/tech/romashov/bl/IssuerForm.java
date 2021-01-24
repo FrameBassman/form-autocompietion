@@ -23,4 +23,9 @@ public class IssuerForm extends AbstractForm {
         selenide.$("#a_snils").clear();
         selenide.$("#a_snils").setValue(properties.getProperty("snils"));
     }
+
+    @Override
+    public String title() {
+        return " Заявитель";
+    }
 }

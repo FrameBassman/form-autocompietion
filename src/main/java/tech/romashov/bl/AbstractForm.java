@@ -21,4 +21,6 @@ public abstract class AbstractForm {
     public SelenideElement fieldSet() {
         return null;
     }
+
+    public abstract String title();
 }

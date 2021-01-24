@@ -13,4 +13,9 @@ public class MotherForm extends AbstractForm {
     public void fill() {
 
     }
+
+    @Override
+    public String title() {
+        return " Мать ребёнка";
+    }
 }

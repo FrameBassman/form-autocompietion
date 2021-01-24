@@ -13,4 +13,9 @@ public class FatherForm extends AbstractForm {
     public void fill() {
 
     }
+
+    @Override
+    public String title() {
+        return " Отец ребёнка";
+    }
 }

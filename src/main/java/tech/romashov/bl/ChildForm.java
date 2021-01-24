@@ -13,4 +13,9 @@ public class ChildForm extends AbstractForm {
     public void fill() {
 
     }
+
+    @Override
+    public String title() {
+        return " Информация о ребёнке";
+    }
 }

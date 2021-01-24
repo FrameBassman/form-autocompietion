@@ -13,4 +13,9 @@ public class IssuerAddressForm extends AbstractForm {
     public void fill() {
 
     }
+
+    @Override
+    public String title() {
+        return " Адрес заявителя";
+    }
 }
