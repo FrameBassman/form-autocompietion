@@ -2,7 +2,6 @@ package tech.romashov.bl;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
-import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 

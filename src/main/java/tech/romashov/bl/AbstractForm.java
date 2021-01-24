@@ -10,7 +10,7 @@ public abstract class AbstractForm implements IFillable {
     protected Logger log;
     protected SelenideDriver selenide;
     protected ApplicationProperties properties;
-    protected SelenideElement fieldSet;
+    protected ElementsCollection wrappers;
 
     public AbstractForm(Logger log, SelenideDriver selenide, ApplicationProperties props, ElementsCollection fieldSets) {
         this.log = log;
@@ -18,14 +18,10 @@ public abstract class AbstractForm implements IFillable {
         this.properties = props;
         for (SelenideElement fieldSet : fieldSets) {
             if (fieldSet.getText().trim().startsWith(title().trim())) {
-                this.fieldSet = fieldSet;
+                wrappers = fieldSet.$$(".form-wrapper");;
                 break;
             }
         }
-    }
-
-    public SelenideElement fieldSet() {
-        return null;
     }
 
     public abstract String title();

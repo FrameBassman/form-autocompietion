@@ -12,17 +12,17 @@ public class IssuerForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        selenide.$("#a_surname").clear();
-        selenide.$("#a_surname").setValue(properties.getProperty("surname"));
+        wrappers.get(0).$("input").clear();
+        wrappers.get(0).$("input").setValue(properties.getProperty("surname"));
 
-        selenide.$("#a_name").clear();
-        selenide.$("#a_name").setValue(properties.getProperty("name"));
+        wrappers.get(1).$("input").clear();
+        wrappers.get(1).$("input").setValue(properties.getProperty("name"));
 
-        selenide.$("#a_middlename").clear();
-        selenide.$("#a_middlename").setValue(properties.getProperty("middlename"));
+        wrappers.get(2).$("input").clear();
+        wrappers.get(2).$("input").setValue(properties.getProperty("middlename"));
 
-        selenide.$("#a_snils").clear();
-        selenide.$("#a_snils").setValue(properties.getProperty("snils"));
+        wrappers.get(3).$("input").clear();
+        wrappers.get(3).$("input").setValue(properties.getProperty("snils"));
     }
 
     @Override

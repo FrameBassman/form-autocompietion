@@ -5,6 +5,8 @@ import com.codeborne.selenide.SelenideDriver;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Selectors.byText;
+
 public class FormTest {
     @Test
     public void itWorks() throws Exception {
@@ -13,7 +15,7 @@ public class FormTest {
         selenide.switchTo().frame("main");
         for (SelenideElement fieldSet : selenide.$("#myForm").$$(".fieldsets")) {
 
-            int a = 1;
+            selenide.$(byText(""));
         }
     }
 }
