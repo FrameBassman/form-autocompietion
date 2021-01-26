@@ -13,6 +13,7 @@ public class NotificationForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        log.info("Start NotificationForm filling");
         SelenideElement by_phone = next();
         by_phone.$("input").clear();
         by_phone.$("input").setValue(properties.getProperty("by_phone"));
@@ -20,6 +21,7 @@ public class NotificationForm extends AbstractForm implements IFillable {
         SelenideElement by_email = next();
         by_email.$("input").clear();
         by_email.$("input").setValue(properties.getProperty("by_email"));
+        log.info("Finish NotificationForm filling");
     }
 
 

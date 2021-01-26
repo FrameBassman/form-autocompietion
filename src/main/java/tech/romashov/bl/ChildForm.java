@@ -16,6 +16,7 @@ public class ChildForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        log.info("Start ChildForm filling");
         SelenideElement snils = next();
         snils.$("input").clear();
         snils.$("input").setValue(properties.getProperty("child_snils"));
@@ -37,6 +38,7 @@ public class ChildForm extends AbstractForm implements IFillable {
         SelenideElement date_of_birth = next();
         date_of_birth.$("input").clear();
         date_of_birth.$("input").setValue(properties.getProperty("date_of_birth"));
+        log.info("Finish ChildForm filling");
     }
 
     private void selectSex() {

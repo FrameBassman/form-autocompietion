@@ -13,6 +13,7 @@ public class ChildPassportForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        log.info("Start ChildPassportForm filling");
         SelenideElement child_passport_series = next();
         child_passport_series.$("input").clear();
         child_passport_series.$("input").setValue(properties.getProperty("child_passport_series"));
@@ -32,6 +33,7 @@ public class ChildPassportForm extends AbstractForm implements IFillable {
         SelenideElement child_passport_record_number = next();
         child_passport_record_number.$("input").clear();
         child_passport_record_number.$("input").setValue(properties.getProperty("child_passport_record_number"));
+        log.info("Finish ChildPassportForm filling");
     }
 
     @Override

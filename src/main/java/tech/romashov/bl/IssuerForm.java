@@ -13,6 +13,7 @@ public class IssuerForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        log.info("Start IssuerForm filling");
         SelenideElement surname = next();
         surname.$("input").clear();
         surname.$("input").setValue(properties.getProperty("surname"));
@@ -28,6 +29,7 @@ public class IssuerForm extends AbstractForm implements IFillable {
         SelenideElement snils = next();
         snils.$("input").clear();
         snils.$("input").setValue(properties.getProperty("snils"));
+        log.info("Finish IssuerForm filling");
     }
 
     @Override

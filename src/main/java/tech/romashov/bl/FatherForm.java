@@ -13,6 +13,7 @@ public class FatherForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
+        log.info("Start FatherForm filling");
         SelenideElement father_surname = next();
         father_surname.$("input").clear();
         father_surname.$("input").setValue(properties.getProperty("father_surname"));
@@ -36,6 +37,7 @@ public class FatherForm extends AbstractForm implements IFillable {
         SelenideElement father_phone = next();
         father_phone.$("input").clear();
         father_phone.$("input").setValue(properties.getProperty("father_phone"));
+        log.info("Finish FatherForm filling");
     }
 
     @Override
