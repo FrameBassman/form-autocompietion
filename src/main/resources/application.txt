@@ -24,7 +24,7 @@ child_snils = 123
 child_surname = Петров
 child_name = Петр
 child_middlename = Петрович
-sex = female
+sex = Женский
 date_of_birth = 01.01.2010
 
 child_passport_series = 1212

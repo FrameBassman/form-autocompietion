@@ -3,10 +3,11 @@ package tech.romashov.bl;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
-import static com.codeborne.selenide.Selectors.byText;
+import java.util.Locale;
 
 public class ChildForm extends AbstractForm implements IFillable {
     private int index = 0;
@@ -33,8 +34,7 @@ public class ChildForm extends AbstractForm implements IFillable {
         child_middlename.$("input").clear();
         child_middlename.$("input").setValue(properties.getProperty("child_middlename"));
 
-        SelenideElement sex = next();
-//        sex.$(byText("Женский")).click();
+        selectSex();
 
         SelenideElement date_of_birth = next();
         date_of_birth.$("input").clear();
@@ -52,6 +52,16 @@ public class ChildForm extends AbstractForm implements IFillable {
         finally {
             index++;
         }
+    }
+
+    private void selectSex() {
+        SelenideElement sex = next();
+        String name = sex.$("input").getAttribute("name");
+        String value = "1";
+        if (properties.getProperty("sex").toLowerCase(Locale.ROOT).trim().equals("женский")) {
+            value = "2";
+        }
+        sex.$(By.name(name)).selectRadio(value);
     }
 
     @Override
