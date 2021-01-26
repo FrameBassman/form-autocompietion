@@ -25,6 +25,7 @@ public class SummaryForm implements IFillable {
         forms.add(new ChildAddressForm(log, selenide, props, elements));
         forms.add(new FatherForm(log, selenide, props, elements));
         forms.add(new MotherForm(log, selenide, props, elements));
+        forms.add(new CheckboxesForm(log, selenide, props, elements));
     }
 
     @Override
