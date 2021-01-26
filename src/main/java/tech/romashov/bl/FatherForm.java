@@ -2,6 +2,7 @@ package tech.romashov.bl;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
@@ -12,23 +13,29 @@ public class FatherForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        wrappers.get(0).$("input").clear();
-        wrappers.get(0).$("input").setValue(properties.getProperty("father_surname"));
+        SelenideElement father_surname = next();
+        father_surname.$("input").clear();
+        father_surname.$("input").setValue(properties.getProperty("father_surname"));
 
-        wrappers.get(1).$("input").clear();
-        wrappers.get(1).$("input").setValue(properties.getProperty("father_name"));
+        SelenideElement father_name = next();
+        father_name.$("input").clear();
+        father_name.$("input").setValue(properties.getProperty("father_name"));
 
-        wrappers.get(2).$("input").clear();
-        wrappers.get(2).$("input").setValue(properties.getProperty("father_middlename"));
+        SelenideElement father_middlename = next();
+        father_middlename.$("input").clear();
+        father_middlename.$("input").setValue(properties.getProperty("father_middlename"));
 
-        wrappers.get(3).$("input").clear();
-        wrappers.get(3).$("input").setValue(properties.getProperty("father_date_of_birth"));
+        SelenideElement father_date_of_birth = next();
+        father_date_of_birth.$("input").clear();
+        father_date_of_birth.$("input").setValue(properties.getProperty("father_date_of_birth"));
 
-        wrappers.get(4).$("input").clear();
-        wrappers.get(4).$("input").setValue(properties.getProperty("father_email"));
+        SelenideElement father_email = next();
+        father_email.$("input").clear();
+        father_email.$("input").setValue(properties.getProperty("father_email"));
 
-        wrappers.get(5).$("input").clear();
-        wrappers.get(5).$("input").setValue(properties.getProperty("father_phone"));
+        SelenideElement father_phone = next();
+        father_phone.$("input").clear();
+        father_phone.$("input").setValue(properties.getProperty("father_phone"));
     }
 
     @Override
