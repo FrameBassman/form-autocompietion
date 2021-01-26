@@ -10,8 +10,6 @@ import tech.romashov.ApplicationProperties;
 import java.util.Locale;
 
 public class ChildForm extends AbstractForm implements IFillable {
-    private int index = 0;
-
     public ChildForm(Logger log, SelenideDriver selenide, ApplicationProperties props, ElementsCollection elements) {
         super(log, selenide, props, elements);
     }
@@ -39,19 +37,6 @@ public class ChildForm extends AbstractForm implements IFillable {
         SelenideElement date_of_birth = next();
         date_of_birth.$("input").clear();
         date_of_birth.$("input").setValue(properties.getProperty("date_of_birth"));
-    }
-
-    private SelenideElement next() {
-        try {
-            while (!wrappers.get(index).isDisplayed()) {
-                index++;
-            }
-
-            return wrappers.get(index);
-        }
-        finally {
-            index++;
-        }
     }
 
     private void selectSex() {

@@ -11,6 +11,7 @@ public abstract class AbstractForm implements IFillable {
     protected SelenideDriver selenide;
     protected ApplicationProperties properties;
     protected ElementsCollection wrappers;
+    protected int index = 0;
 
     public AbstractForm(Logger log, SelenideDriver selenide, ApplicationProperties props, ElementsCollection fieldSets) {
         this.log = log;
@@ -25,4 +26,18 @@ public abstract class AbstractForm implements IFillable {
     }
 
     public abstract String title();
+
+
+    protected SelenideElement next() {
+        try {
+            while (!wrappers.get(index).isDisplayed()) {
+                index++;
+            }
+
+            return wrappers.get(index);
+        }
+        finally {
+            index++;
+        }
+    }
 }

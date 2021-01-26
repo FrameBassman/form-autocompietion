@@ -2,6 +2,7 @@ package tech.romashov.bl;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
@@ -12,20 +13,25 @@ public class ChildPassportForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        wrappers.get(0).$("input").clear();
-        wrappers.get(0).$("input").setValue(properties.getProperty("child_passport_series"));
+        SelenideElement child_passport_series = next();
+        child_passport_series.$("input").clear();
+        child_passport_series.$("input").setValue(properties.getProperty("child_passport_series"));
 
-        wrappers.get(1).$("input").clear();
-        wrappers.get(1).$("input").setValue(properties.getProperty("child_passport_number"));
+        SelenideElement child_passport_number = next();
+        child_passport_number.$("input").clear();
+        child_passport_number.$("input").setValue(properties.getProperty("child_passport_number"));
 
-        wrappers.get(2).$("input").clear();
-        wrappers.get(2).$("input").setValue(properties.getProperty("child_passport_issue_date"));
+        SelenideElement child_passport_issue_date = next();
+        child_passport_issue_date.$("input").clear();
+        child_passport_issue_date.$("input").setValue(properties.getProperty("child_passport_issue_date"));
 
-        wrappers.get(3).$("input").clear();
-        wrappers.get(3).$("input").setValue(properties.getProperty("child_passport_issuer"));
+        SelenideElement child_passport_issuer = next();
+        child_passport_issuer.$("input").clear();
+        child_passport_issuer.$("input").setValue(properties.getProperty("child_passport_issuer"));
 
-        wrappers.get(4).$("input").clear();
-        wrappers.get(4).$("input").setValue(properties.getProperty("child_passport_record_number"));
+        SelenideElement child_passport_record_number = next();
+        child_passport_record_number.$("input").clear();
+        child_passport_record_number.$("input").setValue(properties.getProperty("child_passport_record_number"));
     }
 
     @Override
