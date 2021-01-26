@@ -2,6 +2,7 @@ package tech.romashov.bl;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
@@ -12,17 +13,21 @@ public class IssuerForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        wrappers.get(0).$("input").clear();
-        wrappers.get(0).$("input").setValue(properties.getProperty("surname"));
+        SelenideElement surname = next();
+        surname.$("input").clear();
+        surname.$("input").setValue(properties.getProperty("surname"));
 
-        wrappers.get(1).$("input").clear();
-        wrappers.get(1).$("input").setValue(properties.getProperty("name"));
+        SelenideElement name = next();
+        name.$("input").clear();
+        name.$("input").setValue(properties.getProperty("name"));
 
-        wrappers.get(2).$("input").clear();
-        wrappers.get(2).$("input").setValue(properties.getProperty("middlename"));
+        SelenideElement middlename = next();
+        middlename.$("input").clear();
+        middlename.$("input").setValue(properties.getProperty("middlename"));
 
-        wrappers.get(3).$("input").clear();
-        wrappers.get(3).$("input").setValue(properties.getProperty("snils"));
+        SelenideElement snils = next();
+        snils.$("input").clear();
+        snils.$("input").setValue(properties.getProperty("snils"));
     }
 
     @Override

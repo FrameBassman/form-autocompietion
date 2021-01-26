@@ -2,6 +2,7 @@ package tech.romashov.bl;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
@@ -12,20 +13,25 @@ public class IssuerPassportForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        wrappers.get(0).$("input").clear();
-        wrappers.get(0).$("input").setValue(properties.getProperty("passport_series"));
+        SelenideElement passport_series = next();
+        passport_series.$("input").clear();
+        passport_series.$("input").setValue(properties.getProperty("passport_series"));
 
-        wrappers.get(1).$("input").clear();
-        wrappers.get(1).$("input").setValue(properties.getProperty("passport_numeral"));
+        SelenideElement passport_numeral = next();
+        passport_numeral.$("input").clear();
+        passport_numeral.$("input").setValue(properties.getProperty("passport_numeral"));
 
-        wrappers.get(2).$("input").clear();
-        wrappers.get(2).$("input").setValue(properties.getProperty("passport_issue_date"));
+        SelenideElement passport_issue_date = next();
+        passport_issue_date.$("input").clear();
+        passport_issue_date.$("input").setValue(properties.getProperty("passport_issue_date"));
 
-        wrappers.get(3).$("input").clear();
-        wrappers.get(3).$("input").setValue(properties.getProperty("passport_issuer"));
+        SelenideElement passport_issuer = next();
+        passport_issuer.$("input").clear();
+        passport_issuer.$("input").setValue(properties.getProperty("passport_issuer"));
 
-        wrappers.get(4).$("input").clear();
-        wrappers.get(4).$("input").setValue(properties.getProperty("passport_code"));
+        SelenideElement passport_code = next();
+        passport_code.$("input").clear();
+        passport_code.$("input").setValue(properties.getProperty("passport_code"));
     }
 
     @Override

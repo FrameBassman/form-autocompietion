@@ -2,6 +2,7 @@ package tech.romashov.bl;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
@@ -12,11 +13,13 @@ public class NotificationForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        wrappers.get(0).$("input").clear();
-        wrappers.get(0).$("input").setValue(properties.getProperty("by_phone"));
+        SelenideElement by_phone = next();
+        by_phone.$("input").clear();
+        by_phone.$("input").setValue(properties.getProperty("by_phone"));
 
-        wrappers.get(1).$("input").clear();
-        wrappers.get(1).$("input").setValue(properties.getProperty("by_email"));
+        SelenideElement by_email = next();
+        by_email.$("input").clear();
+        by_email.$("input").setValue(properties.getProperty("by_email"));
     }
 
 

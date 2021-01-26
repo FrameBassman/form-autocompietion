@@ -2,6 +2,7 @@ package tech.romashov.bl;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import tech.romashov.ApplicationProperties;
 
@@ -12,23 +13,29 @@ public class IssuerAddressForm extends AbstractForm implements IFillable {
 
     @Override
     public void fill() {
-        wrappers.get(0).$("input").clear();
-        wrappers.get(0).$("input").setValue(properties.getProperty("index"));
+        SelenideElement indexElement = next();
+        indexElement.$("input").clear();
+        indexElement.$("input").setValue(properties.getProperty("index"));
 
-        wrappers.get(1).$("input").clear();
-        wrappers.get(1).$("input").setValue(properties.getProperty("city"));
+        SelenideElement city = next();
+        city.$("input").clear();
+        city.$("input").setValue(properties.getProperty("city"));
 
-        wrappers.get(2).$("input").clear();
-        wrappers.get(2).$("input").setValue(properties.getProperty("street"));
+        SelenideElement street = next();
+        street.$("input").clear();
+        street.$("input").setValue(properties.getProperty("street"));
 
-        wrappers.get(3).$("input").clear();
-        wrappers.get(3).$("input").setValue(properties.getProperty("house_number"));
+        SelenideElement house_number = next();
+        house_number.$("input").clear();
+        house_number.$("input").setValue(properties.getProperty("house_number"));
 
-        wrappers.get(4).$("input").clear();
-        wrappers.get(4).$("input").setValue(properties.getProperty("building"));
+        SelenideElement building = next();
+        building.$("input").clear();
+        building.$("input").setValue(properties.getProperty("building"));
 
-        wrappers.get(5).$("input").clear();
-        wrappers.get(5).$("input").setValue(properties.getProperty("apartment"));
+        SelenideElement apartment = next();
+        apartment.$("input").clear();
+        apartment.$("input").setValue(properties.getProperty("apartment"));
     }
 
     @Override
