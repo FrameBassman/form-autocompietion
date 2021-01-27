@@ -45,13 +45,13 @@ import de.undercouch.gradle.tasks.download.Download
 task downloadJre(type: Download) {
     overwrite false
     src 'https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u275-b01/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip'
-    dest "$buildDir/downloaded/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip"
+    dest "$buildDir/downloads/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip"
 }
 
 task unzipJre(type: Copy) {
     dependsOn downloadJre
     from {
-        zipTree("$buildDir/downloaded/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip")
+        zipTree("$buildDir/downloads/OpenJDK8U-jre_x64_windows_hotspot_8u275b01.zip")
     }
     into "$buildDir/launch4j"
 }
