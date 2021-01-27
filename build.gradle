@@ -5,6 +5,7 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * User Manual available at https://docs.gradle.org/5.6.4/userguide/tutorial_java_projects.html
  */
+import de.undercouch.gradle.tasks.download.Download
 
 plugins {
     // Apply the java plugin to add support for Java
@@ -40,7 +41,9 @@ application {
     mainClassName = 'tech.romashov.App'
 }
 
-import de.undercouch.gradle.tasks.download.Download
+group = 'tech.romashov'
+archivesBaseName = 'form-autocompletion'
+version = '1.0.1'
 
 task downloadJre(type: Download) {
     overwrite false
@@ -60,11 +63,11 @@ createExe {
     dependsOn cleanCreateExe, unzipJre
     mainClassName = 'tech.romashov.App'
     bundledJrePath = "jdk8u275-b01-jre"
-    doLast {
-        copy {
-            from("${buildDir}/resources/main/")
-            into("${buildDir}/launch4j")
-            exclude('**/log4j.xml')
-        }
-    }
+//    doLast {
+//        copy {
+//            from("${buildDir}/resources/main/")
+//            into("${buildDir}/launch4j")
+//            exclude('**/log4j.xml')
+//        }
+//    }
 }

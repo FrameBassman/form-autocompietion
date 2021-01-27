@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.FileSystems;
 
 public class MainWindow extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -22,7 +23,7 @@ public class MainWindow extends JFrame {
         SelenideConfig config = new SelenideConfig();
         SelenideDriver selenide = new SelenideDriver(config);
 
-        ApplicationProperties properties = new ApplicationProperties(logger);
+        ApplicationProperties properties = new ApplicationProperties(logger, FileSystems.getDefault());
 
         this.setName("TestContentPane");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
