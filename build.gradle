@@ -63,11 +63,11 @@ createExe {
     dependsOn cleanCreateExe, unzipJre
     mainClassName = 'tech.romashov.App'
     bundledJrePath = "jdk8u275-b01-jre"
-//    doLast {
-//        copy {
-//            from("${buildDir}/resources/main/")
-//            into("${buildDir}/launch4j")
-//            exclude('**/log4j.xml')
-//        }
-//    }
+    doLast {
+        copy {
+            from("${buildDir}/resources/main/")
+            into("${buildDir}/launch4j")
+            exclude('**/log4j.xml')
+        }
+    }
 }
