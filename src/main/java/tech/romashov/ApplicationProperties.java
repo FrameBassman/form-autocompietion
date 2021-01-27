@@ -34,22 +34,31 @@ public class ApplicationProperties {
     }
 
     private void loadProps() throws IOException {
-        String fileName = "application.txt";
-        Path external = fs.getPath(fileName);
-        if (Files.exists(external)) {
-            log.info("Start read properties from external file");
-            try (InputStream input = Files.newInputStream(external);) {
-                try (InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
-                    origin.load(reader);
+        try {
+            String fileName = "application.txt";
+            log.info("Start to resolve path");
+            Path external = fs.getPath(fileName);
+            log.info("Finish path resolving");
+
+            if (Files.exists(external)) {
+                log.info("Start read properties from external file");
+                try (InputStream input = Files.newInputStream(external)) {
+                    log.info("Open external file as a stream");
+                    try (InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+                        log.info("Open reader stream");
+                        origin.load(reader);
+                    }
+                }
+            } else {
+                log.info("Start read properties from resources");
+                try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+                    try (InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+                        origin.load(reader);
+                    }
                 }
             }
-        } else {
-            log.info("Start read properties from resources");
-            try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
-                try (InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
-                    origin.load(reader);
-                }
-            }
+        } finally {
+            log.info("Finish reading properties");
         }
     }
 }

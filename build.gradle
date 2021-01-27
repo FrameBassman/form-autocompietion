@@ -41,9 +41,9 @@ application {
     mainClassName = 'tech.romashov.App'
 }
 
-group = 'tech.romashov'
-archivesBaseName = 'form-autocompletion'
-version = '1.0.1'
+//group = 'tech.romashov'
+//archivesBaseName = 'form-autocompletion'
+//version = '1.0.1'
 
 task downloadJre(type: Download) {
     overwrite false

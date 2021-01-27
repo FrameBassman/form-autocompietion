@@ -35,8 +35,14 @@ public class MainWindow extends JFrame {
         openBrowserButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                logger.info("Get url from properties");
+                String url = properties.getProperty("url");
+                logger.info("Finish getting url from properties");
+
                 logger.info("Start browser opening");
-                selenide.open(properties.getProperty("url"));
+                selenide.open(url);
+                logger.info("Finish browser opening");
+
                 selenide.switchTo().frame("main");
                 logger.info("Finish browser opening");
             }
