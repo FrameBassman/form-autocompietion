@@ -39,6 +39,7 @@ dependencies {
 application {
     // Define the main class for the application
     mainClassName = 'tech.romashov.App'
+    applicationDefaultJvmArgs = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n']
 }
 
 //group = 'tech.romashov'
