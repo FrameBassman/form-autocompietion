@@ -44,7 +44,7 @@ public class ApplicationProperties {
                 log.info("Start read properties from external file");
                 try (InputStream input = Files.newInputStream(external)) {
                     log.info("Open external file as a stream");
-                    try (InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+                    try (UnicodeReader reader = new UnicodeReader(input, "UTF-8")) {
                         log.info("Open reader stream");
                         origin.load(reader);
                     }

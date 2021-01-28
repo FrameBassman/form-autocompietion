@@ -39,7 +39,7 @@ public class MainWindow extends JFrame {
                 String url = properties.getProperty("url");
                 logger.info("Finish getting url from properties");
 
-                logger.info("Start browser opening");
+                logger.info("Start browser opening with url {}", url);
                 selenide.open(url);
                 logger.info("Finish browser opening");
 
